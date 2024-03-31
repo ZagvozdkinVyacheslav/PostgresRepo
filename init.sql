@@ -1,7 +1,3 @@
-CREATE USER postgres;
-CREATE DATABASE Hahaton;
-GRANT ALL PRIVILEGES ON DATABASE postgres TO docker;
-
 create table Balance
 (
     id           bigint primary key,
@@ -199,7 +195,6 @@ CREATE SEQUENCE clients_seq START WITH 10;
 CREATE SEQUENCE clientstatustype_seq START WITH 10;
 CREATE SEQUENCE clienttype_seq START WITH 10;
 CREATE SEQUENCE correction_seq START WITH 10;
-CREATE SEQUENCE expenses_seq START WITH 10;
 CREATE SEQUENCE operatorinfo_seq START WITH 10;
 CREATE SEQUENCE operators_seq START WITH 10;
 CREATE SEQUENCE payments_seq START WITH 10;

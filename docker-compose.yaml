@@ -1,15 +1,13 @@
-version: "3.3"
+version: "1.0"
 services:
   db:
-    restart: always
     image: postgres:latest
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123456
       POSTGRES_DB: Hahaton
     volumes:
-      - . ./init.sql:/docker-entrypoint-initdb.d/init.sql
-  # . ./new_database.sql:/docker-entrypoint-initdb.d/new_database.sql
-  # network_mode: 'host'
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+#    network_mode: 'host'
     ports:
-      - 5433:5433
+      - 5432:5432
