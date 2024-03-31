@@ -138,6 +138,14 @@ create table Correction
     FOREIGN KEY (clientId) REFERENCES Clients (id),
     FOREIGN KEY (operatorId) REFERENCES Operators (id)
 );
+CREATE TABLE Sessions
+(
+    id         BIGINT PRIMARY KEY,
+    token      text,
+    operatorid BIGINT,
+    created    TIMESTAMPTZ,
+    expirytime TIMESTAMPTZ
+);
 INSERT INTO operatorinfo (id, lastname, firstname, middlename, phonenumber, birthdate)
 VALUES ('1'::bigint, 'Загвоздкин'::text,
         'Вячеслав'::text, 'Сергеевич'::text,
@@ -203,7 +211,7 @@ CREATE SEQUENCE roles_seq START WITH 10;
 CREATE SEQUENCE services_seq START WITH 10;
 CREATE SEQUENCE servicetariff_seq START WITH 10;
 CREATE SEQUENCE tariffs_seq START WITH 10;
-
+CREATE SEQUENCE sessions_seq START WITH 10;
 
 
 
